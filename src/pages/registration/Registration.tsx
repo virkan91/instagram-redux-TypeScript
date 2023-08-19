@@ -13,7 +13,7 @@ import googlepay from "../../assets/img-register/googleplay.png";
 
 const Registration = () => {
   return (
-    <div className="bg-[#FAFAFA] pt-[90px] ">
+    <div className="bg-[#FAFAFA] pt-[90px] pb-[90px]">
       <div className="bg-[#FFF] border-[1px] m-auto p-[30px_35px] max-w-[480px]">
         <div className="flex justify-center">
           <img src={logoregis} alt="" />
@@ -24,8 +24,10 @@ const Registration = () => {
           </p>
         </div>
         <div className="bg-[#0095f6] rounded-[8px] flex gap-4 items-center justify-center p-[10px] mt-[30px] text-[#fff]">
-                  <AiFillFacebook className="text-[25px]"/>
-          <p className="font-medium text-[#FFF] text-[18px]">Login in with Facebook</p>
+          <AiFillFacebook className="text-[25px]" />
+          <p className="font-medium text-[#FFF] text-[18px]">
+            Login in with Facebook
+          </p>
         </div>
         <div className="py-[20px] relative flex items-center justify-center m-[8px]">
           <hr className="border w-full" />
@@ -67,6 +69,34 @@ const Registration = () => {
           <img src={appstor} alt="" />
           <img src={googlepay} alt="" />
         </div>
+      </div>
+      <div>
+        <ul className="flex justify-center gap-4 text-[#8E8E8E] text-[16px] mt-[70px] flex-wrap">
+          <li>Meta</li>
+          <li>About</li>
+          <li>Blog</li>
+          <li>Jobs</li>
+          <li>Help</li>
+          <li>API</li>
+          <li>Privacy</li>
+          <li>Terms</li>
+          <li>Top Accounts</li>
+          <li>Locations</li>
+          <li>Instagram Lite</li>
+          <li>Threads</li>
+          <li>Contact Uploading & Non-Users</li>
+          <li>Meta Verified</li>
+        </ul>
+      </div>
+      <div className="flex justify-center gap-6 items-center text-[#8E8E8E] mt-[15px]">
+        <select name="" id="" className="outline-none">
+          <option value="">English</option>
+          <option value="">Russion</option>
+          <option value="">Estonia</option>
+          <option value="">Brazil</option>
+          <option value="">English</option>
+        </select>
+        <span>© 2023 Instagram from Meta</span>
       </div>
     </div>
   );
