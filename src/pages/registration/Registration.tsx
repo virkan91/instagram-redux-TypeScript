@@ -63,7 +63,7 @@ const Registration = () => {
           </Link>
         </div>
       </div>
-      <div className="max-w-[480px]  m-auto mt-[20px] text-center">
+      <div className="max-w-[480px] m-auto mt-[20px] text-center">
         <p className="font-normal	m-[20px]">Get the app.</p>
         <div className="flex gap-2 justify-center">
           <img src={appstor} alt="" />
@@ -89,6 +89,7 @@ const Registration = () => {
         </ul>
       </div>
       <div className="flex justify-center gap-6 items-center text-[#8E8E8E] mt-[15px]">
+      <div className="flex justify-center gap-6 items-center text-[#8E8E8E] mt-[20px]">
         <select name="" id="" className="outline-none">
           <option value="">English</option>
           <option value="">Russion</option>
