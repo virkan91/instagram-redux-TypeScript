@@ -8,7 +8,6 @@ import "./registration.css";
 
 // import img
 import logoregis from "../../assets/img-register/logo-regis.png";
-import google from "../../assets/img-register/google.png";
 import appstor from "../../assets/img-register/appstor.png";
 import googlepay from "../../assets/img-register/googleplay.png";
 
