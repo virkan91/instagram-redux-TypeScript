@@ -88,6 +88,7 @@ const Registration = () => {
           <li>Meta Verified</li>
         </ul>
       </div>
+      <div className="flex justify-center gap-6 items-center text-[#8E8E8E] mt-[15px]">
       <div className="flex justify-center gap-6 items-center text-[#8E8E8E] mt-[20px]">
         <select name="" id="" className="outline-none">
           <option value="">English</option>
