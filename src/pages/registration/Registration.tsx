@@ -54,7 +54,7 @@ const Registration = () => {
         </div>
       </div>
       <div className="w-[32%]  m-auto mt-[20px] text-center">
-        <p className="font-normal	m-[20px]">Get the app.</p>
+        <p className="font-normal	m-[20px] text-[18px]">Get the app.</p>
         <div className="flex gap-2 justify-center">
           <img src={appstor} alt="" />
           <img src={googlepay} alt="" />
