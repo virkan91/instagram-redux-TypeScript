@@ -63,7 +63,7 @@ const Registration = () => {
           </Link>
         </div>
       </div>
-      <div className="max-w-[480px]  m-auto mt-[20px] text-center">
+      <div className="max-w-[480px] m-auto mt-[20px] text-center">
         <p className="font-normal	m-[20px]">Get the app.</p>
         <div className="flex gap-2 justify-center">
           <img src={appstor} alt="" />
