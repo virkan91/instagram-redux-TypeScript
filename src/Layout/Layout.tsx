@@ -62,13 +62,15 @@ const Layout = () => {
             <BiMoviePlay className="text-[28px] " />
             <li className="hidden lg:flex text-[18px]">Reels</li>
           </a>
-          <a
-            href=""
-            className=" items-center gap-2 p-[10px_5px] text-[20px] hover:bg-[#f1f2f5] lg:w-[100%] rounded-[10px] grid lg:grid-cols-[40px_auto]"
-          >
-            <LiaFacebookMessenger className="text-[30px]" />
-            <li className="hidden lg:flex text-[18px]">Messages</li>
-          </a>
+          <Link to="/home/messages">
+            <a
+              href=""
+              className=" items-center gap-2 p-[10px_5px] text-[20px] hover:bg-[#f1f2f5] lg:w-[100%] rounded-[10px] grid lg:grid-cols-[40px_auto]"
+            >
+              <LiaFacebookMessenger className="text-[30px]" />
+              <li className="hidden lg:flex text-[18px]">Messages</li>
+            </a>
+          </Link>
           <a
             href=""
             className=" hidden items-center gap-2 p-[10px_5px] text-[20px] hover:bg-[#f1f2f5] lg:w-[100%] rounded-[10px] md:grid lg:grid-cols-[40px_auto]"

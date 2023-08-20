@@ -7,6 +7,7 @@ import User from "./pages/user/User";
 import Login from "./pages/login/Login";
 import Registration from "./pages/registration/Registration";
 import Profile from "./pages/profile/Profile";
+import Messages from "./pages/messages/Messages";
 
 function App() {
   const router = createBrowserRouter([
@@ -33,6 +34,10 @@ function App() {
         {
           path: "user",
           element:<User/>
+        },
+        {
+          path: "messages",
+          element: <Messages/>
         },
         // profile
         {
