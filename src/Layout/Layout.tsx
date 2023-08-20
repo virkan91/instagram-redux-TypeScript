@@ -20,7 +20,7 @@ const Layout = () => {
   return (
     <div>
       {/* Navbar */}
-      <div className="navbar border-[1px] fixed md:top-0 md:left-0 lg:w-[260px] flex md:flex-col justify-between md:h-screen w-full md:w-auto bottom-0    ">
+      <div className="bg-[#FFF] navbar border-[1px] fixed md:top-0 md:left-0 lg:w-[260px] flex md:flex-col justify-between md:h-screen w-full md:w-auto bottom-0    ">
         <ul className=" md:p-[40px_25px_5px_25px] flex md:flex-col items-start gap-[5px] justify-evenly w-full md:w-auto">
           <a
             href="#"
@@ -81,18 +81,20 @@ const Layout = () => {
             <AiOutlinePlusSquare className="text-[28px]" />
             <li className="hidden lg:flex text-[18px]">Create</li>
           </a>
-          <a
-            href=""
-            className=" items-center gap-2 p-[10px_5px] text-[20px] hover:bg-[#f1f2f5] lg:w-[100%] rounded-[10px] grid lg:grid-cols-[40px_auto]"
-          >
-            <img
-              src={profile}
-              alt=""
-              className="rounded-full w-[32px]  border-[2px] border-[#ccc]"
-            />
+          <Link to="home/profile">
+            <a
+              href=""
+              className=" items-center gap-2 p-[10px_5px] text-[20px] hover:bg-[#f1f2f5] lg:w-[100%] rounded-[10px] grid lg:grid-cols-[40px_auto]"
+            >
+              <img
+                src={profile}
+                alt=""
+                className="rounded-full w-[32px]  border-[2px] border-[#ccc]"
+              />
 
-            <li className="hidden lg:flex text-[18px]">Profile</li>
-          </a>
+              <li className="hidden lg:flex text-[18px]">Profile</li>
+            </a>
+          </Link>
         </ul>
         <div className="p-[5px_25px] hidden md:flex">
           <a
@@ -104,7 +106,7 @@ const Layout = () => {
           </a>
         </div>
       </div>
-      <div className="ml-[200px]">
+      <div className="md:ml-[260px]">
         <Outlet />
       </div>
 
