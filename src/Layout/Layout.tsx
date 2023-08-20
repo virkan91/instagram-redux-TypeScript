@@ -32,10 +32,10 @@ const Layout = () => {
             <p className="fontLogo text-[28px] hidden lg:flex">Instagran</p>
           </a>
 
-          <Link to="/home">
+          <Link to="/home" className="md:w-full">
             <a
               href=""
-              className=" items-center gap-2 p-[10px_5px]  text-[18px] hover:bg-[#f1f2f5] lg:w-[100%] rounded-[10px] grid lg:grid-cols-[40px_auto]"
+              className=" items-center gap-2 p-[10px_5px]  text-[18px] hover:bg-[#f1f2f5] w-[100%] rounded-[10px] grid lg:grid-cols-[40px_auto]"
             >
               <GoHomeFill className="text-[30px]" />
               <li className="hidden lg:flex text-[18px]">Home</li>
@@ -83,7 +83,7 @@ const Layout = () => {
             <AiOutlinePlusSquare className="text-[28px]" />
             <li className="hidden lg:flex text-[18px]">Create</li>
           </a>
-          <Link to="/home/profile">
+          <Link to="/home/profile" className="md:w-full">
             <a
               href=""
               className=" items-center gap-2 p-[10px_5px] text-[20px] hover:bg-[#f1f2f5] lg:w-[100%] rounded-[10px] grid lg:grid-cols-[40px_auto]"

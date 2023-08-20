@@ -18,7 +18,7 @@ const Login = () => {
         <form className="mt-[20px]">
           <input type="email" placeholder="Phone number, username, or email" />
           <input type="password" placeholder="Password" />
-          <Link to="/">
+          <Link to="/home">
             <button className="bg-[#4cb5f9] text-[#FFF] font-bold rounded-[10px]	">
               Log In
             </button>
