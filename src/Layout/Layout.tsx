@@ -13,7 +13,7 @@ import { BiMoviePlay } from "react-icons/bi";
 import { LiaFacebookMessenger } from "react-icons/lia";
 import { AiOutlineHeart } from "react-icons/ai";
 import { AiOutlinePlusSquare } from "react-icons/ai";
-import profile from "../assets/img-home/profile.jpg";
+import avatar from "../assets/img-home/avatar.jpg";
 import { AiOutlineMenu } from "react-icons/ai";
 
 const Layout = () => {
@@ -32,13 +32,15 @@ const Layout = () => {
             <p className="fontLogo text-[28px] hidden lg:flex">Instagran</p>
           </a>
 
-          <a
-            href=""
-            className=" items-center gap-2 p-[10px_5px]  text-[18px] hover:bg-[#f1f2f5] lg:w-[100%] rounded-[10px] grid lg:grid-cols-[40px_auto]"
-          >
-            <GoHomeFill className="text-[30px]" />
-            <li className="hidden lg:flex text-[18px]">Home</li>
-          </a>
+          <Link to="/home">
+            <a
+              href=""
+              className=" items-center gap-2 p-[10px_5px]  text-[18px] hover:bg-[#f1f2f5] lg:w-[100%] rounded-[10px] grid lg:grid-cols-[40px_auto]"
+            >
+              <GoHomeFill className="text-[30px]" />
+              <li className="hidden lg:flex text-[18px]">Home</li>
+            </a>
+          </Link>
           <a
             href=""
             className=" items-center gap-2 p-[10px_5px]  text-[20px] hover:bg-[#f1f2f5] lg:w-[100%] rounded-[10px] grid lg:grid-cols-[40px_auto]"
@@ -81,13 +83,13 @@ const Layout = () => {
             <AiOutlinePlusSquare className="text-[28px]" />
             <li className="hidden lg:flex text-[18px]">Create</li>
           </a>
-          <Link to="home/profile">
+          <Link to="/home/profile">
             <a
               href=""
               className=" items-center gap-2 p-[10px_5px] text-[20px] hover:bg-[#f1f2f5] lg:w-[100%] rounded-[10px] grid lg:grid-cols-[40px_auto]"
             >
               <img
-                src={profile}
+                src={avatar}
                 alt=""
                 className="rounded-full w-[32px]  border-[2px] border-[#ccc]"
               />
