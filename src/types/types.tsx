@@ -11,3 +11,15 @@ export interface IPost {
 export interface IPosts {
   post: IPost;
 }
+
+// interfase Messages
+export interface IMesseng{
+    id: number;
+    img: string;
+    nameUser: string;
+    status: string;
+    online: false;
+}
+export interface IMessengs{
+    messeng: IMesseng;
+}
