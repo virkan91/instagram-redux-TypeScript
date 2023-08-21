@@ -110,9 +110,7 @@ const Messages = () => {
         </div>
       </div>
       <div className="border-b-[1px]">
-        <div>
-          
-        </div>
+        <div></div>
       </div>
       <div className="flex justify-center items-center h-screen">
         <div className="">

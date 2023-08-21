@@ -1,6 +1,6 @@
 import React from "react";
 
-// 
+//
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
 import Button from "@mui/material/Button";
@@ -27,11 +27,10 @@ import { AiOutlineHeart } from "react-icons/ai";
 import { AiOutlinePlusSquare } from "react-icons/ai";
 import avatar from "../assets/img-home/avatar.jpg";
 import { AiOutlineMenu } from "react-icons/ai";
-import {BsSearch} from "react-icons/bs"
+import { BsSearch } from "react-icons/bs";
 
 const Layout = () => {
-  
-// const modal
+  // const modal
   const [state, setState] = React.useState({
     top: false,
     left: false,
@@ -76,7 +75,7 @@ const Layout = () => {
       </div>
     </Box>
   );
-// __________________________________
+  // __________________________________
 
   return (
     <div>
@@ -103,13 +102,11 @@ const Layout = () => {
             </a>
           </Link>
 
-          <div>
+          <div className="hidden  items-center gap-2 p-[10px_5px] text-[20px] hover:bg-[#f1f2f5] lg:w-[100%] rounded-[10px] md:grid lg:grid-cols-[40px_auto]">
             {(["left"] as const).map((anchor) => (
               <React.Fragment key={anchor}>
                 <button onClick={toggleDrawer(anchor, true)}>
-                  <div
-                    className=" items-center gap-2 p-[10px_5px]  text-[20px] hover:bg-[#f1f2f5] lg:w-[100%] rounded-[10px] grid lg:grid-cols-[40px_auto]"
-                  >
+                  <div className=" items-center gap-2   text-[20px] hover:bg-[#f1f2f5] lg:w-[100%] rounded-[10px] grid lg:grid-cols-[40px_auto]">
                     <BiSearch className="text-[30px]" />
                     <li className="hidden lg:flex text-[18px]">Search</li>
                   </div>
@@ -139,7 +136,7 @@ const Layout = () => {
             <BiMoviePlay className="text-[28px] " />
             <li className="hidden lg:flex text-[18px]">Reels</li>
           </a>
-          <Link to="/home/messages">
+          <Link to="/home/messages" className="md:w-full">
             <a
               href=""
               className=" items-center gap-2 p-[10px_5px] text-[20px] hover:bg-[#f1f2f5] lg:w-[100%] rounded-[10px] grid lg:grid-cols-[40px_auto]"
@@ -162,6 +159,7 @@ const Layout = () => {
             <AiOutlinePlusSquare className="text-[28px]" />
             <li className="hidden lg:flex text-[18px]">Create</li>
           </a>
+
           <Link to="/home/profile" className="md:w-full">
             <a
               href=""
