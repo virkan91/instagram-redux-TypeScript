@@ -20,7 +20,7 @@ const Layout = () => {
   return (
     <div>
       {/* Navbar */}
-      <div className="bg-[#FFF] navbar border-[1px] fixed md:top-0 md:left-0 lg:w-[260px] flex md:flex-col justify-between md:h-screen w-full md:w-auto bottom-0    ">
+      <div className="bg-[#FFF] navbar z-20 border-[1px] fixed md:top-0 md:left-0 lg:w-[260px] flex md:flex-col justify-between md:h-screen w-full md:w-auto bottom-0    ">
         <ul className=" md:p-[40px_25px_5px_25px] flex md:flex-col items-start gap-[5px] justify-evenly w-full md:w-auto">
           <a
             href="#"
@@ -110,7 +110,7 @@ const Layout = () => {
           </a>
         </div>
       </div>
-      <div className="md:ml-[260px]">
+      <div className="lg:ml-[260px] md:ml-[100px]">
         <Outlet />
       </div>
 
