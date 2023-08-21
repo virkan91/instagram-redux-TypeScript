@@ -158,7 +158,7 @@ const Profile = () => {
           <p className="text-[12px]">ОТМЕТКИ</p>
         </div>
       </div>
-      <div className="grid grid-cols-3 py-[10x] gap-[2px] m-[0px_54px_0px_54px] ">
+      <div className="grid md:grid-cols-3 grid-cols-1 gap-y-[12px] py-[10x] gap-[2px] m-[0px_54px_0px_54px] ">
         <div className="flex flex-col items-center">
           <img src={a1} alt="" className="w-full h-full" />
         </div>
