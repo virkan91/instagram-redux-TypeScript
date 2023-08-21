@@ -13,9 +13,9 @@ import { IPosts } from "../types/types";
 
 const HomePosts = ({ post }: IPosts) => {
   return (
-    <div>
+    <div className="w-[90%] m-auto">
       {
-        <div className="flex justify-between items-center">
+        <div className="flex justify-between items-center mt-[20px]">
           <div className="flex gap-[12px] items-center">
             <img src={post.img} alt="" className="rounded-full w-[60px]" />
             <div>

@@ -10,10 +10,14 @@ import { AiOutlineHeart } from "react-icons/ai";
 import avatar from "../../assets/img-profile/avatar.jpg";
 import i1 from "../../assets/img-home/i1.jpg";
 import i2 from "../../assets/img-home/i2.jpg";
-import im3 from "../../assets/img-home/im3.png"
+import im3 from "../../assets/img-home/im3.png";
 import sof from "../../assets/img-home/sof.jpg";
-import judo from "../../assets/img-home/judo.jpg"
-import profile from "../../assets/img-home/profile.jpg";
+import judo from "../../assets/img-home/judo.jpg";
+import n from "../../assets/img-home/n.jpg";
+import n2 from "../../assets/img-home/n2.jpg";
+import n3 from "../../assets/img-home/n3.jpg";
+import n4 from "../../assets/img-home/n4.jpg";
+import n5 from "../../assets/img-home/n5.jpg";
 import { IPost, IPosts } from "../../types/types";
 import HomePosts from "../../components/HomePosts";
 
@@ -42,7 +46,7 @@ const Home = () => {
     },
     {
       id: 3,
-      img: profile,
+      img: n,
       nameUser: "Softclub",
       address: "Душанбе",
       boximg: sof,
@@ -71,6 +75,7 @@ const Home = () => {
         </div>
       </nav>
       {/* Storis */}
+
       <div className="exx flex gap-4 overflow-y-hidden overflow-x-scroll  mt-[80px] md:mt-[40px] m-[20px_15px]">
         <div className="rounded-full ml-[5px] sm:ml-[13px]">
           {" "}
@@ -116,7 +121,7 @@ const Home = () => {
           {" "}
           <div className="bgGrad rounded-full p-[2px] inline-block w-[62px] h-[62px] ">
             <img
-              src={profile}
+              src={n}
               className="bg-white cursor-grab rounded-full border-[1.5px] border-white"
             />
           </div>{" "}
@@ -126,7 +131,7 @@ const Home = () => {
           {" "}
           <div className="bgGrad rounded-full p-[2px] inline-block w-[62px] h-[62px] ">
             <img
-              src={avatar}
+              src={n4}
               className="bg-white cursor-grab rounded-full border-[1.5px] border-white"
             />
           </div>{" "}
@@ -136,7 +141,7 @@ const Home = () => {
           {" "}
           <div className="bgGrad rounded-full p-[2px] inline-block w-[62px] h-[62px] ">
             <img
-              src={avatar}
+              src={n5}
               className="bg-white cursor-grab rounded-full border-[1.5px] border-white"
             />
           </div>{" "}
@@ -146,7 +151,7 @@ const Home = () => {
           {" "}
           <div className="bgGrad rounded-full p-[2px] inline-block w-[62px] h-[62px] ">
             <img
-              src={avatar}
+              src={n3}
               className="bg-white cursor-grab rounded-full border-[1.5px] border-white"
             />
           </div>{" "}
@@ -156,7 +161,7 @@ const Home = () => {
           {" "}
           <div className="bgGrad rounded-full p-[2px] inline-block w-[62px] h-[62px] ">
             <img
-              src={avatar}
+              src={n2}
               className="bg-white cursor-grab rounded-full border-[1.5px] border-white"
             />
           </div>{" "}
@@ -255,7 +260,7 @@ const Home = () => {
       </div>
 
       {/* home posts */}
-      <div className="m-[60px_50px_0px_50px] flex flex-col gap-4 max-w-[900px]">
+      <div className="lg:w-[60%] py-[40px]">
         {posts.map((post: IPost) => {
           return <HomePosts post={post} />;
         })}

@@ -32,7 +32,7 @@ const Profile = () => {
           <IoIosSettings className="text-[28px]" />
         </div>
         <div className="flex gap-1 items-center">
-          <h3 className="text-[20px]">profile</h3>
+          <h3 className="text-[20px]">Virkan</h3>
           <AiOutlineDown />
         </div>
         <div>
@@ -115,15 +115,15 @@ const Profile = () => {
         </div>
         <div className="flex flex-col justify-center">
           <img src={n} alt="" className="rounded-full w-[60px]" />
-          <p className="text-[14px] mt-[6px]">Address</p>
+          <p className="text-[14px] mt-[6px]">Stars</p>
         </div>
         <div className="flex flex-col justify-center">
           <img src={n2} alt="" className="rounded-full w-[60px]" />
-          <p className="text-[14px] mt-[6px]">Address</p>
+          <p className="text-[14px] mt-[6px]">Layki</p>
         </div>
         <div className="flex flex-col justify-center">
           <img src={n3} alt="" className="rounded-full w-[60px]" />
-          <p className="text-[14px] mt-[6px]">Address</p>
+          <p className="text-[14px] mt-[6px]">Questions</p>
         </div>
         <div className="flex flex-col justify-center">
           <img src={n4} alt="" className="rounded-full w-[60px]" />
