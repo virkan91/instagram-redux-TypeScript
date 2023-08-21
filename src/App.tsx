@@ -8,6 +8,7 @@ import Login from "./pages/login/Login";
 import Registration from "./pages/registration/Registration";
 import Profile from "./pages/profile/Profile";
 import Messages from "./pages/messages/Messages";
+import Search from "./pages/search/Search";
 
 function App() {
   const router = createBrowserRouter([
@@ -28,22 +29,26 @@ function App() {
         // home
         {
           index: true,
-          element: <Home/>
+          element: <Home />,
         },
         // user
         {
           path: "user",
-          element:<User/>
+          element: <User />,
+        },
+        {
+          path: "search",
+          element: <Search />,
         },
         {
           path: "messages",
-          element: <Messages/>
+          element: <Messages />,
         },
         // profile
         {
           path: "profile",
-          element:<Profile/>
-        }
+          element: <Profile />,
+        },
       ],
     },
   ]);
