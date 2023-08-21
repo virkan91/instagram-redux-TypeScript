@@ -82,16 +82,14 @@ const Layout = () => {
       {/* Navbar */}
       <div className="bg-[#FFF] navbar z-20 border-[1px] fixed md:top-0 md:left-0 lg:w-[260px] flex md:flex-col justify-between md:h-screen w-full md:w-auto bottom-0    ">
         <ul className=" md:p-[40px_25px_5px_25px] flex md:flex-col items-start gap-[5px] justify-evenly w-full md:w-auto">
-          <a
-            href="#"
-            className="items-center gap-2 p-[5px_5px]  text-[18px]  lg:w-[100%] rounded-[10px] md:grid lg:grid-cols-[40px_auto] hidden"
-          >
-            <li className="mb-[40px] flex lg:hidden">
-              <BsInstagram className="text-[26px]" />
-            </li>
-            <p className="fontLogo text-[28px] hidden lg:flex">Instagran</p>
-          </a>
-
+          <Link to="/home">
+            <a className="items-center gap-2 p-[5px_5px]  text-[18px]  lg:w-[100%] rounded-[10px] md:grid lg:grid-cols-[40px_auto] hidden">
+              <li className="mb-[40px] flex lg:hidden">
+                <BsInstagram className="text-[26px]" />
+              </li>
+              <p className="fontLogo text-[28px] hidden lg:flex">Instagran</p>
+            </a>
+          </Link>
           <Link to="/home" className="md:w-full">
             <a
               href=""

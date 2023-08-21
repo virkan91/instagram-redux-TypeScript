@@ -18,8 +18,10 @@ import n2 from "../../assets/img-home/n2.jpg";
 import n3 from "../../assets/img-home/n3.jpg";
 import n4 from "../../assets/img-home/n4.jpg";
 import n5 from "../../assets/img-home/n5.jpg";
+import im8 from "../../assets/img-home/im8.png"
 import { IPost, IPosts } from "../../types/types";
 import HomePosts from "../../components/HomePosts";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const posts: IPost[] = [
@@ -54,11 +56,24 @@ const Home = () => {
       coment: 4,
       like: true,
     },
+    {
+      id: 4,
+      img: n,
+      nameUser: "New_Yourk",
+      address: "New Yourk",
+      boximg: im8,
+      discription: "The best city",
+      coment: 4,
+      like: true,
+    },
   ];
   return (
     <div>
       <nav className="fixed md:hidden w-full duration-300 top-0 border-b py-[15px] flex justify-between items-center px-[16px] bg-white">
+        <Link to="/home">
         <p className="fontLogo text-[24px] cursor-pointer">Instagram</p>
+        </Link>
+
         <div className="flex items-center gap-[20px]">
           {/* Search */}
           <form className="bg-gray-200/70 flex items-center px-[25px]  rounded-[8px] gap-[10px]">
