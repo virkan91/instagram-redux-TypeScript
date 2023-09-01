@@ -110,13 +110,14 @@ const Messages = () => {
         </div>
       </div>
       <div className="border-b-[1px]">
-        <div></div>
+        <div>ddfdf</div>
       </div>
-      <div className="flex justify-center items-center h-screen">
+      <div className="flex justify-center items-center h-screen border-2 border-[blue]">
         <div className="">
           <div className="rounded-full border-[2px] border-[#000] p-[10px]">
             <RiMessengerLine className="text-[70px]" />
           </div>
+          
         </div>
       </div>
     </div>

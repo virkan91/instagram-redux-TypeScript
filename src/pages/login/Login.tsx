@@ -1,13 +1,76 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { AiFillFacebook } from "react-icons/ai";
 
 // import img
 import logoregis from "../../assets/img-register/logo-regis.png";
 import appstor from "../../assets/img-register/appstor.png";
 import googlepay from "../../assets/img-register/googleplay.png";
+import axios from "axios";
+import { saveToken } from "../../utils/token";
+import { message } from "antd";
 
 const Login = () => {
+  const navigate = useNavigate();
+  const [name, setName] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+
+  const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const user = {
+      userName: name,
+      password: password,
+    };
+    try {
+      const { data } = await axios.post(
+        `${import.meta.env.VITE_API_URL}Account/login`,
+        user
+      );
+      if (
+        data.statusCode === 200 &&
+        data.data !== "Your username or password is incorrect!!!"
+      ) {
+        saveToken(data.data);
+        navigate("/home");
+      } else {
+        message.error("Wrong password or login!");
+      }
+    } catch (error) {}
+  };
+
+
+  // const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+  //   event.preventDefault();
+  //   const user = {
+  //     userName: name,
+  //     password: password,
+  //   };
+  //   try {
+  //     const response = await fetch(
+  //       `${import.meta.env.VITE_API_URL}Account/login`,
+  //       {
+  //         method: "POST",
+  //         headers: {
+  //           "Content-Type": "application/json",
+  //         },
+  //         body: JSON.stringify(user),
+  //       }
+  //     );
+  //     const data = await response.json();
+  //     if (
+  //       data.statusCode === 200 &&
+  //       data.data !== "Your username or password is incorrect!!!"
+  //     ) {
+  //       saveToken(data.data);
+  //       navigate("/home");
+  //     } else {
+  //       message.error("Wrong password or login !");
+  //     }
+  //   } catch (error) {}
+  // };
+
+
+
   return (
     <div className="bg-[#FAFAFA] pt-[90px] pb-[90px]">
       <div className="bg-[#FFF] border-[1px] m-auto p-[30px_35px] max-w-[480px]">
@@ -15,14 +78,28 @@ const Login = () => {
           <img src={logoregis} alt="" />
         </div>
 
-        <form className="mt-[20px]">
-          <input type="email" placeholder="Phone number, username, or email" />
-          <input type="password" placeholder="Password" />
-          <Link to="/home">
-            <button className="bg-[#4cb5f9] text-[#FFF] font-bold rounded-[10px]	">
-              Log In
-            </button>
-          </Link>
+        <form className="mt-[20px]"
+        onSubmit={onSubmit}>
+          <input
+            onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+              setName(event.target.value);
+            }}
+            value={name}
+            type="text"
+            placeholder="Phone number, username, or email"
+          />
+          <input
+            onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+              setPassword(event.target.value);
+            }}
+            value={password}
+            type="password"
+            placeholder="Password"
+          />
+
+          <button className="bg-[#4cb5f9] text-[#FFF] font-bold rounded-[10px]	">
+            Log In
+          </button>
         </form>
         <div className="py-[20px] relative flex items-center justify-center m-[8px]">
           <hr className="border w-full" />
