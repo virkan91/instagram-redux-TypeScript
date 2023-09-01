@@ -1,4 +1,3 @@
-import { useState } from "react";
 import "./App.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Layout from "./Layout/Layout";
@@ -9,23 +8,34 @@ import Registration from "./pages/registration/Registration";
 import Profile from "./pages/profile/Profile";
 import Messages from "./pages/messages/Messages";
 import Search from "./pages/search/Search";
+import AuthCheck from "./utils/Authcheck";
+import ProtectedRoute from "./utils/ProtectedRoute";
 
 function App() {
   const router = createBrowserRouter([
     // Login and Registration
     {
       path: "/",
-      element: <Login />,
+      element: (
+        <AuthCheck>
+          <Login />
+        </AuthCheck>
+      ),
     },
     {
-      path: "registration",
+      path: "/registration",
       element: <Registration />,
     },
 
     {
       path: "home",
-      element: <Layout />,
+      element:
+        <ProtectedRoute>
+        <Layout />
+        </ProtectedRoute>,
       children: [
+      
+      
         // home
         {
           index: true,
