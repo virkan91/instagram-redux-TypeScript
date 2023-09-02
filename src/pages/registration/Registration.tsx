@@ -1,17 +1,48 @@
-import React from "react";
-import { Link } from "react-router-dom";
-
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { AiFillFacebook } from "react-icons/ai";
-
-
 import "./registration.css";
 
 // import img
 import logoregis from "../../assets/img-register/logo-regis.png";
 import appstor from "../../assets/img-register/appstor.png";
 import googlepay from "../../assets/img-register/googleplay.png";
+import { saveToken } from "../../utils/token";
+import { message } from "antd";
+import axios from "axios";
 
 const Registration = () => {
+  const navigate = useNavigate();
+  const [email, setEmail] = useState<string>("");
+  const [name, setName] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+  const [confirmPassword, setConfirmPassword] = useState<string>("");
+
+  const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const user = {
+      email: email,
+      userName: name,
+      password: password,
+      confirmPassword: confirmPassword,
+    };
+    try {
+      const { data } = await axios.post(
+        `${import.meta.env.VITE_API_URL}Account/register`,
+        user
+      );
+      if (
+        data.statusCode === 200 &&
+        data.data !== "Your username or password is incorrect!!!"
+      ) {
+        // saveToken(data.data);
+        navigate("/");
+      } else {
+        message.error("Wrong password or login!");
+      }
+    } catch (error) {}
+  };
+
   return (
     <div className="bg-[#FAFAFA] pt-[90px] pb-[90px]">
       <div className="bg-[#FFF] border-[1px] m-auto p-[30px_35px] max-w-[480px]">
@@ -35,16 +66,47 @@ const Registration = () => {
             OR
           </p>
         </div>
-        <form>
-          <input type="email" placeholder="Email" />
-          <input type="text" placeholder="Full name" />
-          <input type="text" placeholder="Username" />
-          <input type="password" placeholder="Password" />
-          <Link to="/">
-            <button className="bg-[#4cb5f9] text-[#FFF] font-medium	">
-              Sign Up
-            </button>
-          </Link>
+        <form onSubmit={onSubmit}>
+          <input
+            onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+              setEmail(event.target.value);
+            }}
+            value={email}
+            type="email"
+            placeholder="Email"
+          />
+          <input
+            onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+            setName(event.target.value);
+            }}
+            value={name}
+            type="text"
+            placeholder="Username"
+          />
+          <input
+            onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+              setPassword(event.target.value);
+            }}
+            value={password}
+            type="password"
+            placeholder="Password"
+          />
+          <input
+            onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+              setConfirmPassword(event.target.value);
+            }}
+            value={confirmPassword}
+            type="password"
+            placeholder="Repeat password"
+          />
+
+          <button
+            type="submit"
+            className="bg-[#4cb5f9] text-[#FFF] font-medium	"
+          >
+            Sign Up
+          </button>
+
           <p className="text-[#8E8E8E] font-normal text-[16px] text-center mt-[20px]">
             By signing up, you agree to our Terms, Data Policy and Cookies
             Policy.

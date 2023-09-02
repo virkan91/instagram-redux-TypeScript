@@ -24,18 +24,21 @@ function App() {
     },
     {
       path: "/registration",
-      element: <Registration />,
+      element: (
+        <AuthCheck>
+          <Registration />,
+        </AuthCheck>
+      ),
     },
 
     {
       path: "home",
-      element:
+      element: (
         <ProtectedRoute>
-        <Layout />
-        </ProtectedRoute>,
+          <Layout />
+        </ProtectedRoute>
+      ),
       children: [
-      
-      
         // home
         {
           index: true,
