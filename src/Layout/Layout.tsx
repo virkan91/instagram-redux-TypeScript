@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 //
 import Box from "@mui/material/Box";
@@ -6,7 +6,7 @@ import Drawer from "@mui/material/Drawer";
 
 import "./laute.css";
 // import img
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Outlet } from "react-router-dom";
 import { BsInstagram } from "react-icons/bs";
 import { GoHomeFill } from "react-icons/go";
@@ -20,6 +20,29 @@ import avatar from "../assets/img-home/avatar.jpg";
 import { AiOutlineMenu } from "react-icons/ai";
 import { BsSearch } from "react-icons/bs";
 
+// import Button from "@mui/material/Button";
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
+
+import Typography from "@mui/material/Typography";
+import Modal from "@mui/material/Modal";
+import { saveToken } from "../utils/token";
+import { message } from "antd";
+
+const style = {
+  position: "absolute" as "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  width: 400,
+  bgcolor: "background.paper",
+  border: "1px solid #ccc",
+  boxShadow: 24,
+  p: 4,
+  
+
+};
+
 const Layout = () => {
   // const modal
   const [state, setState] = React.useState({
@@ -28,6 +51,8 @@ const Layout = () => {
     bottom: false,
     right: false,
   });
+
+  const [modal, setModal] = useState<boolean>(false);
 
   const toggleDrawer =
     (anchor: any, open: boolean) =>
@@ -68,6 +93,16 @@ const Layout = () => {
   );
   // __________________________________
 
+  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
+  const navigate = useNavigate()
   return (
     <div>
       {/* Navbar */}
@@ -164,16 +199,69 @@ const Layout = () => {
             </a>
           </Link>
         </ul>
-        <div className="p-[5px_25px] hidden md:flex">
-          <a
-            href=""
-            className=" items-center gap-1 p-[10px_5px] text-[20px] hover:bg-[#f1f2f5] lg:w-[100%] rounded-[10px] grid lg:grid-cols-[40px_auto]"
-          >
+        <button
+          id="basic-button"
+          aria-controls={open ? "basic-menu" : undefined}
+          aria-haspopup="true"
+          aria-expanded={open ? "true" : undefined}
+          onClick={handleClick}
+          className="p-[5px_25px] hidden md:flex"
+        >
+          <span className=" items-center gap-1 p-[10px_5px] text-[20px] hover:bg-[#f1f2f5] lg:w-[100%] rounded-[10px] grid lg:grid-cols-[40px_auto]">
             <AiOutlineMenu className="text-[28px]" />
             <li className="hidden lg:flex">More</li>
-          </a>
-        </div>
+          </span>
+        </button>
+        <Menu
+          id="basic-menu"
+          anchorEl={anchorEl}
+          open={open}
+          onClose={handleClose}
+          MenuListProps={{
+            "aria-labelledby": "basic-button",
+          }}
+        >
+          <MenuItem onClick={handleClose}>Настройки</MenuItem>
+          <MenuItem onClick={handleClose}>Ваши действие</MenuItem>
+          <MenuItem onClick={handleClose}>Сохраненное</MenuItem>
+          <MenuItem onClick={handleClose}>Переключить тему</MenuItem>
+          <MenuItem onClick={handleClose}>Сообщение о проблеме</MenuItem>
+          <hr />
+          <MenuItem onClick={handleClose}>
+            Переключение между аккаунтамы
+          </MenuItem>
+          <hr />
+          <MenuItem onClick={() => setModal(true)}>Выйти</MenuItem>
+        </Menu>
       </div>
+
+      {
+        <Modal
+          open={modal}
+          onClose={() => setModal(false)}
+          aria-labelledby="modal-modal-title"
+          aria-describedby="modal-modal-description"
+        >
+          <Box sx={style}>
+            <Typography id="modal-modal-title" variant="h6" component="h2" sx={{textAlign: "center"}}>
+              Выход
+            </Typography>
+            {/* <p className="text-center">Выход</p> */}
+            <Typography id="modal-modal-description" sx={{ mt: 2, textAlign:"center" }}>
+              Вы действительно хотите выйти?
+            </Typography>
+            <div className="flex gap-20 justify-center mt-[20px]">
+              <button onClick={() => {
+                saveToken("")
+                navigate("/")
+                message.warning("Вы вышли из аккаунта!")
+              }}> Да</button>
+              <button>Нет</button>
+            </div>
+          </Box>
+        </Modal>
+      }
+
       <div className="lg:ml-[260px] md:ml-[100px]">
         <Outlet />
       </div>
