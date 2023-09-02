@@ -97,7 +97,7 @@ const Login = () => {
             placeholder="Password"
           />
 
-          <button className="bg-[#4cb5f9] text-[#FFF] font-bold rounded-[10px]	">
+          <button className="bg-[#4cb5f9] text-[#FFF] font-bold rounded-[10px]" type="submit">
             Log In
           </button>
         </form>
