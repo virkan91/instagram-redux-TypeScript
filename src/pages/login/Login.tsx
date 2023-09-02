@@ -32,6 +32,7 @@ const Login = () => {
       ) {
         saveToken(data.data);
         navigate("/home");
+        message.success("Вы успешно зашли")
       } else {
         message.error("Wrong password or login!");
       }

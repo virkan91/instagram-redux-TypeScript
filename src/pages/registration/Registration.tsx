@@ -7,7 +7,7 @@ import "./registration.css";
 import logoregis from "../../assets/img-register/logo-regis.png";
 import appstor from "../../assets/img-register/appstor.png";
 import googlepay from "../../assets/img-register/googleplay.png";
-import { saveToken } from "../../utils/token";
+// import { saveToken } from "../../utils/token";
 import { message } from "antd";
 import axios from "axios";
 
