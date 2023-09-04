@@ -45,7 +45,7 @@ const Registration = () => {
 
   return (
     <div className="bg-[#FAFAFA] pt-[90px] pb-[90px]">
-      <div className="bg-[#FFF] border-[1px] m-auto p-[30px_35px] max-w-[480px]">
+      <div className="bg-[#FFF] border-[1px] m-auto p-[30px_35px] max-w-[420px]">
         <div className="flex justify-center">
           <img src={logoregis} alt="" />
         </div>
@@ -113,7 +113,7 @@ const Registration = () => {
           </p>
         </form>
       </div>
-      <div className="border-[1px]  m-auto p-[30px_35px] mt-[20px] bg-[#FFF] max-w-[480px] ">
+      <div className="border-[1px]  m-auto p-[30px_35px] mt-[20px] bg-[#FFF] max-w-[420px] ">
         <div className="flex justify-center gap-2 items-center">
           <p className="text-[#262626] font-normal	text-[18px]">
             Have an account?

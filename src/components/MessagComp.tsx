@@ -1,11 +1,9 @@
-import React from "react";
-import { IMesseng } from "../types/types";
 
-const MessagComp = ({messeng}: IMesseng) => {
+const MessagComp = ({messeng, setId}: any) => {
   return (
     <div>
       {
-        <div className="px-[20px] hover:bg-gray-200 py-[10px] duration-300 flex items-center gap-4">
+        <div onClick={() => setId(messeng.id)} className="px-[20px] hover:bg-gray-200 py-[10px] duration-300 flex items-center gap-4">
           <div>
             <img
               src={messeng.img}

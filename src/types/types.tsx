@@ -1,3 +1,4 @@
+
 export interface IPost {
   id: number;
   img: string;
@@ -11,15 +12,21 @@ export interface IPost {
 export interface IPosts {
   post: IPost;
 }
-
+export interface IArr {
+  [index: number]: IArr_obj;
+  map: any;
+}
+export interface IArr_obj {
+  hmo: string;
+  message: string;
+}
 // interfase Messages
-export interface IMesseng{
-    id: number;
-    img: string;
-    nameUser: string;
-    status: string;
-    online: false;
+export interface IMesseng {
+  id: number;
+  img: string;
+  nameUser: string;
+  status: string;
+  online: false;
+  messages: IArr;
 }
-export interface IMessengs{
-    messeng: IMesseng;
-}
+

@@ -8,6 +8,9 @@ import { FaRegBookmark } from "react-icons/fa";
 import { BiUserPin } from "react-icons/bi";
 import { AiOutlineSetting } from "react-icons/ai";
 
+import Tabs from "@mui/material/Tabs";
+import Tab from "@mui/material/Tab";
+
 // img import
 // import profile from "../../assets/img-profile/profile.jpg";
 import op from "../../assets/img-profile/op.jpg";
@@ -25,6 +28,12 @@ import a6 from "../../assets/img-profile/a6.png";
 import avatar from "../../assets/img-profile/avatar.jpg";
 
 const Profile = () => {
+  const [value, setValue] = React.useState(2);
+
+  const handleChange = (event: React.SyntheticEvent, newValue: number) => {
+    setValue(newValue);
+  };
+
   return (
     <div>
       <div className="lg:hidden flex justify-between items-center border-b-[1px] w-full p-[10px_10px]">
@@ -145,18 +154,27 @@ const Profile = () => {
         </div>
       </div>
       <div className="border-t-[1px] flex justify-center py-[10px] gap-[50px] items-center lg:m-[0px_54px_0px_54px]">
-        <div className="flex justify-center items-center gap-[5px]">
-          <BsGrid3X3 className="text-[15px] " />
-          <p className="text-[12px]">ПУБЛИКАЦИИ</p>
-        </div>
-        <div className="flex justify-center items-center gap-[5px]">
-          <FaRegBookmark className="text-[18px]" />
-          <p className="text-[12px]">СОХРАНЕННОЕ</p>
-        </div>
-        <div className="flex justify-center items-center gap-[5px]">
-          <BiUserPin className="text-[20px]" />
-          <p className="text-[12px]">ОТМЕТКИ</p>
-        </div>
+        <Tabs
+          value={value}
+          onChange={handleChange}
+          aria-label="disabled tabs example"
+        >
+          <Tab
+            icon={<BsGrid3X3 className="text-[11px] " />}
+            iconPosition="start"
+            label={"ПУБЛИКАЦИИ"}
+          />
+          <Tab
+            icon={<FaRegBookmark className="text-[13px] " />}
+            iconPosition="start"
+            label={"СОХРАНЕННОЕ"}
+          />
+          <Tab
+            icon={<BiUserPin className="text-[15px] " />}
+            iconPosition="start"
+            label={"ОТМЕТКИ"}
+          />
+        </Tabs>
       </div>
       <div className="grid md:grid-cols-3 grid-cols-2 gap-[4px] py-[10x]  m-[0px_54px_0px_54px] ">
         <div className="flex flex-col items-center">

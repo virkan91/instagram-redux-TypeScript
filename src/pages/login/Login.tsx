@@ -32,7 +32,7 @@ const Login = () => {
       ) {
         saveToken(data.data);
         navigate("/home");
-        message.success("Вы успешно зашли")
+        message.success("Вы успешно вошли")
       } else {
         message.error("Wrong password or login!");
       }
@@ -40,46 +40,17 @@ const Login = () => {
   };
 
 
-  // const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
-  //   event.preventDefault();
-  //   const user = {
-  //     userName: name,
-  //     password: password,
-  //   };
-  //   try {
-  //     const response = await fetch(
-  //       `${import.meta.env.VITE_API_URL}Account/login`,
-  //       {
-  //         method: "POST",
-  //         headers: {
-  //           "Content-Type": "application/json",
-  //         },
-  //         body: JSON.stringify(user),
-  //       }
-  //     );
-  //     const data = await response.json();
-  //     if (
-  //       data.statusCode === 200 &&
-  //       data.data !== "Your username or password is incorrect!!!"
-  //     ) {
-  //       saveToken(data.data);
-  //       navigate("/home");
-  //     } else {
-  //       message.error("Wrong password or login !");
-  //     }
-  //   } catch (error) {}
-  // };
-
+  
 
 
   return (
     <div className="bg-[#FAFAFA] pt-[90px] pb-[90px]">
-      <div className="bg-[#FFF] border-[1px] m-auto p-[30px_35px] max-w-[480px]">
+      <div className="bg-[#FFF] border-[1px] m-auto p-[30px_35px] max-w-[420px]">
         <div className="flex justify-center py-[40px]">
           <img src={logoregis} alt="" />
         </div>
 
-        <form className="mt-[20px]"
+        <form
         onSubmit={onSubmit}>
           <input
             onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
@@ -119,7 +90,7 @@ const Login = () => {
         </div>
       </div>
 
-      <div className="border-[1px]  m-auto p-[30px_35px] mt-[20px] bg-[#FFF] max-w-[480px] ">
+      <div className="border-[1px]  m-auto p-[30px_35px] mt-[20px] bg-[#FFF] max-w-[420px] ">
         <div className="flex justify-center gap-2 items-center">
           <p className="text-[#262626] font-normal	text-[18px]">
             Don't have an account?

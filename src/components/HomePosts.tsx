@@ -7,6 +7,7 @@ import { BiMessageRounded } from "react-icons/bi";
 import { LuSend } from "react-icons/lu";
 import { BiBookmark } from "react-icons/bi";
 
+ 
 // import img
 // import im3 from "../assets/img-home/im3.png";
 import { IPosts } from "../types/types";
@@ -49,10 +50,19 @@ const HomePosts = ({ post }: IPosts) => {
       </div>
       {
         <div className="py-[20px] border-b-[1px]">
+          <p className="text-[16px] mb-2">Нравится</p>
           <p>
             <span className="font-medium">{post.nameUser}</span>{" "}
             {post.discription}
           </p>
+          <div className="mt-[20px]">
+            <input
+              type="text"
+              className="border-none outline-none"
+              placeholder="Добавьте комментарий..."
+            />
+            
+          </div>
         </div>
       }
     </div>
